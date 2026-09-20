@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Blue · Dolphin Lagoon</title>
+<style>
+:root{color-scheme:light;--ink:#183c45;--muted:#66848b;--cream:#f7f7ef;--teal:#146d70}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button{font:inherit;cursor:pointer}header{max-width:1240px;margin:auto;padding:28px 32px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:800;letter-spacing:-1px}.brand span{color:#34a9b3}.tag{font-size:11px;letter-spacing:2px;color:var(--muted)}main{max-width:1240px;margin:0 auto;padding:12px 32px 24px}.intro{display:flex;align-items:end;justify-content:space-between;margin:14px 0 28px}h1{font-family:Georgia,serif;font-size:clamp(36px,5vw,58px);font-weight:400;letter-spacing:-2px;margin:0 0 12px}p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}.save{font-size:11px;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px}.lagoon{position:relative;overflow:hidden;border-radius:26px;background:#60c6cf;min-height:520px;box-shadow:0 14px 40px #164e5810;cursor:pointer;touch-action:manipulation;user-select:none;outline-offset:5px}.lagoon:focus-visible{outline:3px solid #e9a828}.world{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene-top{position:absolute;top:24px;left:26px;right:26px;display:flex;justify-content:space-between;pointer-events:none}.pill{font-size:10px;letter-spacing:1.4px;background:#ffffffc7;border-radius:30px;padding:10px 14px}.live:before{content:'●';color:#2b9d7f;margin-right:6px}.scene-bottom{position:absolute;bottom:24px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:end;pointer-events:none}.scene-bottom strong{font-family:Georgia,serif;font-size:27px;display:block;margin-bottom:4px}.scene-bottom small{font-size:11px;opacity:.7}.tap{border:1px solid #ffffff90;border-radius:30px;padding:11px 16px;font-size:12px;background:#ffffff50}.balance{background:var(--ink);color:white;border-radius:22px;padding:25px;margin-bottom:16px;position:relative;overflow:hidden}.balance:after{content:'◌';position:absolute;font-size:130px;right:-15px;top:-28px;color:#ffffff0b}.label{font-size:10px;letter-spacing:1.7px;opacity:.7}.amount{font-size:42px;font-weight:700;letter-spacing:-1.5px;margin:13px 0 17px}.amount span{color:#f4cd69;font-size:28px;vertical-align:4px;margin-right:8px}.earn{display:flex;justify-content:space-between;font-size:11px;color:#c2d6d7}.shop-title{display:flex;justify-content:space-between;align-items:center;padding:5px 3px 10px}.shop-title h2{font-size:15px;margin:0}.shop-title span{font-size:10px;color:var(--muted)}.upgrade{display:block;text-align:left;width:100%;background:white;border:1px solid #e0e8e4;border-radius:17px;padding:15px;margin-bottom:10px;transition:transform .15s,border-color .15s}.upgrade:hover:not(:disabled){transform:translateY(-2px);border-color:#388f91}.upgrade:disabled{cursor:not-allowed}.upgrade-top{display:flex;align-items:center;gap:11px}.icon{display:grid;place-items:center;width:38px;height:38px;background:#eaf4ef;border-radius:12px;font-size:21px}.upgrade strong{display:block;font-size:13px}.level{font-size:10px;color:var(--muted);display:block;margin-top:4px}.upgrade-bottom{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:14px}.effect{font-size:11px;color:var(--muted)}.cost{font-size:11px;padding:7px 10px;background:#176e70;color:white;border-radius:9px;white-space:nowrap}.upgrade:disabled .cost{background:#edf0eb;color:#8b9995}.note{text-align:center;font-size:10px;color:var(--muted);padding:8px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.stat{padding:19px 22px;border:1px solid #dde5df;border-radius:16px}.stat small{display:block;font-size:9px;letter-spacing:1.6px;color:var(--muted);margin-bottom:10px}.stat b{font-family:Georgia,serif;font-size:23px;font-weight:400}.stat span{font-size:11px;color:var(--muted);margin-left:6px}footer{display:flex;justify-content:space-between;margin-top:26px;font-size:10px;color:var(--muted)}.float{position:absolute;color:#fff6bc;font-size:26px;font-weight:800;pointer-events:none;text-shadow:0 2px 3px #24677560;animation:float 1s ease-out forwards}.ring{position:absolute;width:35px;height:35px;margin:-17px;border:2px solid #fff9;border-radius:50%;pointer-events:none;animation:ring .7s ease-out forwards}#dolphin{animation:swim 2.8s ease-in-out infinite;transform-origin:400px 300px}#tail{animation:tail .65s ease-in-out infinite;transform-origin:301px 302px}#flipper{animation:fin 1.3s ease-in-out infinite;transform-origin:402px 317px}.fish{animation:fish 22s linear infinite}.fish.second{animation-delay:-12s;animation-duration:30s}.bubble{animation:bubble 7s linear infinite;transform-box:fill-box;transform-origin:center}.b2{animation-delay:-3s}.b3{animation-delay:-5s}.seaweed{transform-box:fill-box;transform-origin:bottom;animation:sway 4s ease-in-out infinite alternate}.rays{animation:glow 7s ease-in-out infinite alternate}.equip{display:none}#toast{min-height:16px;font-size:11px;color:#176e70;text-align:center;margin-top:6px}.flash{animation:flash .35s ease-out}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@keyframes swim{0%,100%{transform:translateY(-9px) rotate(-2deg)}50%{transform:translateY(9px) rotate(2deg)}}@keyframes tail{50%{transform:rotate(12deg) scaleY(.82)}}@keyframes fin{50%{transform:rotate(-14deg)}}@keyframes bubble{from{transform:translateY(90px);opacity:0}20%{opacity:.7}to{transform:translateY(-400px);opacity:0}}@keyframes sway{to{transform:skewX(10deg)}}@keyframes fish{from{transform:translateX(-200px)}to{transform:translateX(900px)}}@keyframes glow{to{opacity:.35;transform:translateX(20px)}}@keyframes float{to{transform:translateY(-85px) rotate(-8deg);opacity:0}}@keyframes ring{to{transform:scale(3);opacity:0}}@keyframes flash{50%{filter:brightness(1.12)}}@media(max-width:850px){.layout{grid-template-columns:1fr}.lagoon{min-height:460px}.shop{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.balance,.shop-title,.note,#toast{grid-column:1/-1}.balance{margin:0}.upgrade{margin:0}.upgrade-bottom{flex-direction:column;align-items:start}.intro{display:block}.save{margin-top:15px}.amount{margin:8px 0}.shop-title{margin-top:10px}}@media(max-width:520px){header{padding:23px 20px}.tag{font-size:8px}main{padding:0 16px 22px}.intro{margin-top:8px}h1{font-size:40px}.lagoon{min-height:420px}.shop{gap:7px}.upgrade{padding:10px}.upgrade-top{display:block}.icon{margin-bottom:10px}.upgrade strong{font-size:11px}.effect{font-size:10px}.cost{font-size:10px}.stats{gap:8px}.stat{padding:14px 10px}.stat b{font-size:19px}.stat span{display:block;margin:5px 0 0}.scene-bottom{left:20px;right:20px}.tap{font-size:10px;padding:9px}footer{font-size:9px}}@media(prefers-reduced-motion:reduce){#dolphin,#tail,#flipper,.fish,.bubble,.seaweed,.rays{animation:none}.float{animation-duration:.3s}}
+#dolphin,#tail,#flipper{animation:none;transform-box:view-box}#tail{transform-origin:301px 302px}#flipper{transform-origin:392px 320px}.world stop{transition:stop-color 3s}.biome{transition:opacity 3s}.journey{position:absolute;top:70px;left:27px;right:27px;pointer-events:none;color:#174b59;font-size:10px;letter-spacing:.6px}.journey-track{height:3px;background:#ffffff40;margin-top:9px;border-radius:5px;overflow:hidden}.journey-track i{display:block;height:100%;background:#fff5c9;width:0;transition:width .2s linear}.lagoon.deep .scene-bottom,.lagoon.deep .journey{color:#e6fafa}.lagoon.deep .tap{background:#12365b80}.scene-bottom,.journey{transition:color 2s}
+</style>
+</head>
+<body>
+<header><div class="brand">little<span>blue.</span></div><div class="tag">A LITTLE OCEAN. ENDLESS POSSIBILITY.</div></header>
+<main><div class="intro"><div><h1>Just keep swimming.</h1><p>Meet your little dolphin. Make a splash. Build an ocean of possibilities.</p></div><div class="save" id="saveStatus">Progress saves automatically</div></div>
+<div class="layout">
+<div class="lagoon" id="lagoon" role="button" tabindex="0" aria-label="Tap the lagoon to earn coins. You can also press Space or Enter.">
+<svg class="world" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><linearGradient id="ocean" x2="0" y2="1"><stop stop-color="#c3eee5"/><stop offset=".45" stop-color="#64c8ce"/><stop offset="1" stop-color="#268eaa"/></linearGradient><linearGradient id="skin" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#9cdee4"/><stop offset=".5" stop-color="#62b6cf"/><stop offset="1" stop-color="#318dad"/></linearGradient><linearGradient id="belly" x2="0" y2="1"><stop stop-color="#e9faf1"/><stop offset="1" stop-color="#b6e5e0"/></linearGradient><radialGradient id="light"><stop stop-color="#edfff2" stop-opacity=".65"/><stop offset="1" stop-color="#edfff2" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="550" fill="url(#ocean)"/><ellipse cx="370" cy="100" rx="410" ry="300" fill="url(#light)"/>
+<g class="rays" fill="#f1fff0" opacity=".18"><path d="M120 0H190L340 480H270Z"/><path d="M260 0H295L490 500H390Z"/><path d="M460 0H550L740 500H680Z"/></g>
+<path d="M0 87Q90 65 185 86T365 86T545 86T800 80" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="2"/>
+<g fill="#3f9fae" opacity=".35"><g class="fish"><path d="M50 177q22-17 40 0-18 17-40 0l-13 10v-20z"/><path d="M5 206q15-12 30 0-15 12-30 0l-10 8v-16z"/><path d="M100 200q15-12 30 0-15 12-30 0l-10 8v-16z"/></g><g class="fish second"><path d="M60 390q22-17 40 0-18 17-40 0l-13 10v-20z"/><path d="M110 365q15-12 30 0-15 12-30 0l-10 8v-16z"/></g></g>
+<path d="M0 464Q130 427 278 469T535 463T800 443V550H0Z" fill="#79c4bc"/><path d="M0 494Q180 460 341 500T800 478V550H0Z" fill="#d4debc"/><path d="M0 528Q240 485 470 527T800 510V550H0Z" fill="#e9e6c7"/>
+<g class="seaweed" fill="none" stroke-linecap="round"><path d="M73 493Q39 449 63 411Q84 379 67 352M80 493Q119 451 106 408M64 493Q23 476 27 437" stroke="#398e87" stroke-width="12"/><path d="M725 485Q699 440 726 394M739 488Q777 454 760 423" stroke="#3b9a92" stroke-width="11"/></g>
+<g fill="#e89680"><path d="M135 504v-49q0-8 6-8t6 8v20l14-13v-16q0-7 6-7t6 7v20l-26 25v13z"/><path d="M130 481l-15-13v-14q0-6-5-6t-5 6v19l25 22z"/></g><g fill="#9ab9a4"><ellipse cx="682" cy="498" rx="32" ry="14"/><ellipse cx="648" cy="507" rx="21" ry="10"/></g><g fill="#afbb9d"><ellipse cx="225" cy="523" rx="4" ry="2"/><ellipse cx="564" cy="520" rx="6" ry="3"/><ellipse cx="600" cy="534" rx="3" ry="2"/></g>
+<g fill="none" stroke="#e0fff2" stroke-width="2" opacity=".55"><circle class="bubble" cx="180" cy="400" r="7"/><circle class="bubble b2" cx="580" cy="480" r="5"/><circle class="bubble b3" cx="630" cy="360" r="10"/><circle class="bubble b2" cx="245" cy="500" r="4"/></g>
+<g id="dolphin">
+<g id="tail"><path d="M309 288Q273 299 252 277Q242 251 218 247Q222 274 236 297Q203 296 188 321Q224 335 260 308L316 327Z" fill="#4b9fbb"/><path d="M251 298Q228 306 212 317" fill="none" stroke="#8dd0d8" stroke-width="4" stroke-linecap="round"/></g>
+<path d="M354 263Q353 217 389 207Q380 238 418 258" fill="#469fba"/>
+<path d="M284 300C319 266 372 248 416 257C461 257 488 278 496 297C512 303 545 301 548 311C552 324 518 333 490 329C460 361 399 363 348 340C321 328 297 318 284 300Z" fill="url(#skin)"/>
+<path d="M303 310Q367 327 414 319Q454 313 484 323Q509 330 537 316Q521 332 490 329C460 361 399 363 348 340Z" fill="url(#belly)"/>
+<path id="flipper" d="M392 318Q410 325 428 355Q429 368 416 364Q384 351 374 323Z" fill="#4d9db8"/>
+<path d="M327 285Q373 262 410 267" fill="none" stroke="#c5eff0" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+<circle cx="465" cy="295" r="7" fill="#173e50"/><circle cx="467" cy="293" r="2.4" fill="white"/><ellipse cx="474" cy="312" rx="9" ry="5" fill="#eaaaa1" opacity=".65"/><path d="M488 316Q510 322 530 314" fill="none" stroke="#286c85" stroke-width="2.5" stroke-linecap="round"/>
+<g id="goggles" class="equip"><rect x="451" y="282" width="32" height="25" rx="11" fill="#c1f8ee" fill-opacity=".35" stroke="#f6c85e" stroke-width="5"/><path d="M450 290L424 282" stroke="#e9b24c" stroke-width="5"/></g>
+<g id="scarf" class="equip" fill="#ef977e"><path d="M434 264L422 263L413 340L427 343Z"/><path d="M423 327Q377 344 352 321L349 345Q381 360 423 339Z"/></g>
+<g id="crown" class="equip"><path d="M435 268L426 240L444 250L453 228L463 251L480 242L474 269Z" fill="#ffda72" stroke="#d8a34a" stroke-width="2"/><circle cx="453" cy="256" r="4" fill="#51b9b5"/></g>
+</g></svg>
+<div class="scene-top"><span class="pill live" id="regionName">THE QUIET LAGOON</span><span class="pill" id="speedPill">1.0× SPEED</span></div>
+<div class="journey"><span id="nextRegion">Next: Coral gardens · 120 m</span><div class="journey-track"><i id="journeyProgress"></i></div></div>
+<div class="scene-bottom"><div><strong id="dolphinName">Your little blue</strong><small id="gearCaption">Big dreams. Tiny flippers.</small></div><div class="tap">✧ Tap anywhere to earn</div></div>
+</div>
+<aside class="shop"><div class="balance"><div class="label">YOUR OCEAN TREASURE</div><div class="amount"><span>◈</span><b id="coins">0</b></div><div class="earn"><span><b id="perTap">1</b> / tap</span><span><b id="perSec">0</b> / second</span></div></div><div class="shop-title"><h2>A little upgrade?</h2><span>GROW AT YOUR OWN PACE</span></div>
+<button class="upgrade" id="buyClick"><div class="upgrade-top"><span class="icon">✧</span><div><strong>Lucky splash</strong><span class="level" id="clickLevel">LEVEL 0</span></div></div><div class="upgrade-bottom"><span class="effect" id="clickEffect">+1 coin per tap</span><span class="cost" id="clickCost">◈ 10</span></div></button>
+<button class="upgrade" id="buySpeed"><div class="upgrade-top"><span class="icon">≈</span><div><strong>Ocean pace</strong><span class="level" id="speedLevel">LEVEL 0</span></div></div><div class="upgrade-bottom"><span class="effect">+1 coin/sec · swim faster</span><span class="cost" id="speedCost">◈ 25</span></div></button>
+<button class="upgrade" id="buyGear"><div class="upgrade-top"><span class="icon">♧</span><div><strong>Adventure gear</strong><span class="level" id="gearLevel">LEVEL 0</span></div></div><div class="upgrade-bottom"><span class="effect">+25% to all earnings</span><span class="cost" id="gearCost">◈ 50</span></div></button>
+<div id="toast" role="status" aria-live="polite"></div><div class="note">Speed earns coins while this page is open.<br>Gear unlocks goggles, a scarf, then a crown.</div></aside>
+</div>
+<div class="stats"><div class="stat"><small>LIFETIME TREASURE</small><b id="lifetime">0</b><span>coins collected</span></div><div class="stat"><small>LITTLE SPLASHES</small><b id="taps">0</b><span>happy taps</span></div><div class="stat"><small>DISTANCE EXPLORED</small><b id="distance">0</b><span>meters of wonder</span></div></div>
+<footer><span>Made for a slower kind of adventure.</span><span>SWIM · SPLASH · REPEAT</span></footer>
+</main>
+<script>
+(() => {
+'use strict';
+const key='little-blue-dolphin-v1';
+const initial={coins:0,total:0,taps:0,distance:0,click:0,speed:0,gear:0};
+let state={...initial},storageOK=true;
+try{const raw=JSON.parse(localStorage.getItem(key));if(raw&&typeof raw==='object'){for(const k of Object.keys(initial)){if(Number.isFinite(raw[k])&&raw[k]>=0)state[k]=raw[k];}for(const k of ['click','speed','gear'])state[k]=Math.min(1000,Math.floor(state[k]));}}catch(e){storageOK=false;}
+const $=id=>document.getElementById(id),format=n=>n>=1e12?n.toExponential(2):new Intl.NumberFormat('en-US',{maximumFractionDigits:n<100?1:0}).format(n);
+const multi=()=>1+state.gear*.25,tapValue=()=> (state.click+1)*multi(),income=()=>state.speed*multi(),swimSpeed=()=>1+state.speed*.35;
+const price=type=>Math.ceil(({click:10,speed:25,gear:50})[type]*Math.pow(({click:1.5,speed:1.6,gear:1.8})[type],state[type]));
+function render(){
+$('coins').textContent=format(state.coins);$('perTap').textContent=format(tapValue());$('perSec').textContent=format(income());$('lifetime').textContent=format(state.total);$('taps').textContent=format(state.taps);$('distance').textContent=format(state.distance);
+for(const type of ['click','speed','gear']){const cost=price(type),cap=type[0].toUpperCase()+type.slice(1);$(type+'Level').textContent='LEVEL '+state[type];$(type+'Cost').textContent=Number.isFinite(cost)?'◈ '+format(cost):'MAX';$('buy'+cap).disabled=state.coins<cost||!Number.isFinite(cost);}
+$('clickEffect').textContent='+'+format(multi())+' coins per tap';$('speedPill').textContent=swimSpeed().toFixed(1)+'× SPEED';
+}
+function appearance(){$('goggles').style.display=state.gear>=1?'inline':'none';$('scarf').style.display=state.gear>=2?'inline':'none';$('crown').style.display=state.gear>=3?'inline':'none';$('gearCaption').textContent=['Big dreams. Tiny flippers.','Ready for a deeper adventure.','A little explorer with a big heart.','The lagoon’s little royalty.'][Math.min(state.gear,3)];}
+function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('saveStatus').textContent=storageOK?'Progress saved on this device':'Saving unavailable · keep this page open';}
+function earn(amount){state.coins+=amount;state.total+=amount;}
+function splash(x,y){earn(tapValue());state.taps++;const bounds=$('lagoon').getBoundingClientRect();for(const cls of ['float','ring']){const el=document.createElement('span');el.className=cls;el.style.left=Math.max(25,Math.min(bounds.width-85,x))+'px';el.style.top=y+'px';if(cls==='float')el.textContent='+'+format(tapValue())+' ◈';$('lagoon').appendChild(el);setTimeout(()=>el.remove(),1000);}render();}
+$('lagoon').addEventListener('click',e=>{const b=$('lagoon').getBoundingClientRect();splash(e.detail?e.clientX-b.left:b.width/2,e.detail?e.clientY-b.top:b.height/2);});
+$('lagoon').addEventListener('keydown',e=>{if(e.code==='Space'||e.code==='Enter'){e.preventDefault();if(!e.repeat){const b=$('lagoon').getBoundingClientRect();splash(b.width/2,b.height/2);}}});
+let toastTimer;
+for(const type of ['click','speed','gear']){$('buy'+type[0].toUpperCase()+type.slice(1)).addEventListener('click',()=>{const cost=price(type);if(!Number.isFinite(cost)||state.coins<cost)return;state.coins-=cost;state[type]++;appearance();render();save();$('toast').textContent=({click:'More treasure in every splash!',speed:'Faster fins! Passive earnings increased.',gear:'New gear! All earnings increased.'})[type];clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').textContent='',3000);});}
+// Tile scenery in camera space so upgrades accelerate every depth layer together.
+const svg=document.querySelector('.world'),ns='http://www.w3.org/2000/svg';
+const make=(tag,attrs={},parent=svg)=>{const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);parent.appendChild(el);return el;};
+const backdrop=make('g');svg.insertBefore(backdrop,$('dolphin'));
+// Replace the stationary seabed with seamless moving terrain.
+let floorStarted=false;
+for(const el of [...svg.children]){if(el===backdrop)break;if(el.tagName.toLowerCase()==='path'&&el.getAttribute('d')?.startsWith('M0 464'))floorStarted=true;if(floorStarted)el.style.display='none';}
+const regions=[
+ {name:'The quiet lagoon',colors:['#c3eee5','#64c8ce','#268eaa'],sand:'#e9e6c7',far:'#79c4bc',kind:'grass'},
+ {name:'Coral gardens',colors:['#c9ece7','#61bfc8','#426ba4'],sand:'#e4c7b1',far:'#779bb6',kind:'coral'},
+ {name:'The kelp forest',colors:['#b2d9bd','#459e93','#185f72'],sand:'#a6b69b',far:'#498880',kind:'kelp'},
+ {name:'Midnight ocean',colors:['#254c78','#1c426d','#10243f'],sand:'#33465f',far:'#253954',kind:'jelly'}
+];
+const layers=[];
+regions.forEach((region,index)=>{const group=make('g',{class:'biome',opacity:0},backdrop);const distant=make('g',{},group),near=make('g',{},group);
+ for(let tile=0;tile<3;tile++){
+  const far=make('g',{transform:`translate(${tile*800} 0)`},distant);
+  make('path',{d:'M0 467Q100 420 200 456T400 464T600 460T800 467V550H0Z',fill:region.far},far);
+  const ground=make('g',{transform:`translate(${tile*800} 0)`},near);
+  make('path',{d:'M0 518Q100 490 200 508T400 516T600 510T800 518V550H0Z',fill:region.sand},ground);
+  for(let j=0;j<5;j++){const x=45+j*163;const ornament=make('g',{transform:`translate(${x} 510)`},ground);
+   if(region.kind==='grass'||region.kind==='kelp'){const h=region.kind==='kelp'?170+(j%3)*40:55+(j%3)*15;make('path',{d:`M0 0Q-26 -${h*.3} 0 -${h*.55}T0 -${h}M8 0Q40 -${h*.25} 21 -${h*.7}M-6 0Q-45 -${h*.15} -30 -${h*.5}`,fill:'none',stroke:region.kind==='kelp'?'#347f70':'#479d91','stroke-width':region.kind==='kelp'?13:8,'stroke-linecap':'round'},ornament);}
+   if(region.kind==='coral'){make('path',{d:'M0 0V-74M0 -20L-27 -42V-63M0 -39L26 -61V-86M-27 -42L-42 -51M0 -60L-15 -76',fill:'none',stroke:['#f3a38c','#d1a2d5','#eab76c'][j%3],'stroke-width':10,'stroke-linecap':'round'},ornament);}
+   if(region.kind==='jelly'){make('path',{d:'M-35 0L-18 -43L-4 -21L12 -61L35 0Z',fill:'#506783'},ornament);const jelly=make('g',{transform:`translate(${x+50} ${175+(j%3)*65})`,opacity:.6},far);make('path',{d:'M-22 0Q-21 -42 0 -38Q23 -38 24 0Z',fill:'#8fd9e5'},jelly);make('path',{d:'M-14 0Q-25 20 -12 42M0 0Q12 25 0 48M14 0Q1 20 16 38',stroke:'#a7e3ed','stroke-width':2,fill:'none'},jelly);}
+   make('ellipse',{cx:x+55,cy:530+(j%2)*6,rx:4,ry:2,fill:region.far},ground);
+  }
+ }
+ layers.push({group,distant,near});
+});
+const currents=make('g',{'stroke-linecap':'round'});svg.insertBefore(currents,$('dolphin'));
+const streaks=Array.from({length:24},(_,i)=>make('line',{stroke:'#e5fff8','stroke-width':i%3===0?2:1},currents));
+const wake=make('g',{fill:'none',stroke:'#e4ffff','stroke-width':1.5});svg.insertBefore(wake,$('dolphin'));
+const bubbles=Array.from({length:14},()=>make('circle',{},wake));
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+let regionIndex=-1,travel=0,phase=0,smoothSpeed=swimSpeed(),frameTime=performance.now();
+function updateRegion(){const index=Math.floor(state.distance/120)%regions.length,progress=state.distance%120;
+ if(index!==regionIndex){regionIndex=index;const region=regions[index];document.querySelectorAll('#ocean stop').forEach((stop,i)=>stop.style.stopColor=region.colors[i]);layers.forEach((layer,i)=>layer.group.setAttribute('opacity',i===index?1:0));$('regionName').textContent=region.name.toUpperCase();$('lagoon').classList.toggle('deep',index===3);}
+ $('nextRegion').textContent='Next: '+regions[(index+1)%regions.length].name+' · '+Math.ceil(120-progress)+' m';$('journeyProgress').style.width=(progress/120*100)+'%';
+}
+function animate(now){const dt=Math.min((now-frameTime)/1000,.05);frameTime=now;
+ if(!document.hidden&&!reduced.matches){smoothSpeed+=(swimSpeed()-smoothSpeed)*Math.min(1,dt*3);travel+=dt*42*smoothSpeed;phase+=dt*(3.8+Math.log2(smoothSpeed)*2.8);
+  const stroke=Math.sin(phase),lift=Math.sin(phase-.65),x=Math.min(55,Math.log2(smoothSpeed)*14);
+  $('dolphin').style.transform=`translate(${x}px,${lift*6+Math.sin(phase*.28)*6}px) rotate(${stroke*2.5}deg)`;
+  $('tail').style.transform=`rotate(${-stroke*23}deg) scaleY(${.9+.1*Math.cos(phase)})`;
+  $('flipper').style.transform=`rotate(${Math.sin(phase-1)*13-4}deg)`;
+  layers.forEach(layer=>{layer.distant.setAttribute('transform',`translate(${-travel*.36%800} 0)`);layer.near.setAttribute('transform',`translate(${-travel%800} 0)`);});
+  streaks.forEach((line,i)=>{const sx=900-((travel*(.8+(i%3)*.45)+i*137)%1100),y=135+(i*71%290),len=4+Math.min(130,(smoothSpeed-1)*16)*(i%2?.6:1);line.setAttribute('x1',sx);line.setAttribute('x2',sx+len);line.setAttribute('y1',y);line.setAttribute('y2',y);line.setAttribute('opacity',Math.min(.5,.12+(smoothSpeed-1)*.06));});
+  bubbles.forEach((bubble,i)=>{const age=(travel*.006+i/14)%1;bubble.setAttribute('cx',255+x-age*(110+Math.min(280,smoothSpeed*26)));bubble.setAttribute('cy',300-age*28+Math.sin(i*7+age*5)*13);bubble.setAttribute('r',2+age*5);bubble.setAttribute('opacity',(1-age)*.6);});
+ }
+ requestAnimationFrame(animate);
+}
+updateRegion();requestAnimationFrame(animate);
+let last=performance.now(),elapsed=0;
+setInterval(()=>{const now=performance.now();const dt=Math.min((now-last)/1000,60);last=now;earn(income()*dt);state.distance+=swimSpeed()*dt;elapsed+=dt;render();updateRegion();if(elapsed>=3){save();elapsed=0;}},200);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)save();});window.addEventListener('pagehide',save);appearance();render();if(!storageOK)$('saveStatus').textContent='Saving unavailable · keep this page open';
+})();
+</script>
+</body></html>
